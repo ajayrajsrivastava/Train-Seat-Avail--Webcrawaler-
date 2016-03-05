@@ -14,7 +14,7 @@ try:
     ars.lower()
     deps.lower()
     url='http://www.railyatri.in/seat-availability/'+(str)(trainno)+'-'+ars+'-'+deps+'?'+'journey_class='+cls+'&journey_date='+date+'&quota=GN'
-    while x[0]!='A':
+    while x[0]=='A':
         sc=requests.get(url)
         soup=BeautifulSoup(sc.content,'lxml')
         for row in soup.find_all('div',attrs={"id" : "first1"}):
